@@ -24,5 +24,18 @@ namespace ToDoListWPFApp
         {
             InitializeComponent();
         }
+
+        private void AddTask_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(TaskInput.Text))
+            {
+                TaskList.Items.Add(TaskInput.Text);
+                TaskInput.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a task.");
+            }
+        }
     }
 }
